@@ -1,0 +1,32 @@
+Java Basic Program file
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the console (commented out for the example)
+        // Scanner sc = new Scanner(System.in);
+        // Read an integer input from the user (or set a fixed value for the example)
+        // int input = sc.nextInt();
+        int input = 153;
+        
+        // Convert the input to a string to easily access its digits
+        String inputStr = Integer.toString(input);
+        
+        // Calculate the sum of the cubes of the digits
+        int len = inputStr.length();
+        int result = 0;
+        for (int i = 0; i < len; i++) {
+            char ch = inputStr.charAt(i);
+            int inp = Character.getNumericValue(ch); // Convert the character to an integer
+            result = result + inp * inp * inp;
+        }
+        
+        // Check if the sum of the cubes of the digits is equal to the input number
+        if (result == input) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+    }
+}
